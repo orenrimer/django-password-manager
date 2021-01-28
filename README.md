@@ -9,8 +9,6 @@ Features:
   - Register, update, authenticate, delete users
   - Entry posting (Create, Retrieve, Update, Delete - CRUD)
   - Building an admin panel
-  - Add new entries to your vault
-  - Update/Delete existing entries
   - Search for specific entries by the site name or URL
   - Bootstrap
   - HTML
