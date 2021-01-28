@@ -19,10 +19,14 @@ install the required packages from the requirements.txt using:
 ```python
 pip install -r requirements.txt
 ```
-To run the website run the command via cmd: python manage.py runserver and you copy the link into your browser to lunch the website.
+To run the website run type the following commend in CMD: 
+```python
+python manage.py runserver
+```
+Then copy the link into your browser to lunch the website.
+<br/>
 
-admin user:
-<br/>
-email: admin@admin.com
-<br/>
-password: admin
+You can create a django superuser by running 
+```python
+python manage.py createsuperuser
+```
