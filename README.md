@@ -12,3 +12,11 @@ Features:
   - Update/Delete existing entries
   - Search for specific entries by the site name or URL
   - Fully Scalable Design
+
+
+# Run The Website
+
+install the required packages from the requirements.txt using:
+```python
+pip install -r requirements.txt
+```
