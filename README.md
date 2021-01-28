@@ -6,12 +6,16 @@
 
 Features:
 
-  - Register/login system 
-  - update your account details
+  - Register, update, authenticate, delete users
+  - Entry posting (Create, Retrieve, Update, Delete - CRUD)
+  - Building an admin panel
   - Add new entries to your vault
   - Update/Delete existing entries
   - Search for specific entries by the site name or URL
-  - Fully responsive
+  - Bootstrap
+  - HTML
+  - CSS
+
 
 # Run The Website
 
