@@ -23,10 +23,10 @@ To run the website run type the following commend in CMD:
 ```python
 python manage.py runserver
 ```
-Then copy the link into your browser to lunch the website.
+then copy the link into your browser to lunch the website.
 <br/>
 
-You can create a django superuser by running 
+You can create a django superuser by running the following commend in CMD:
 ```python
 python manage.py createsuperuser
 ```
