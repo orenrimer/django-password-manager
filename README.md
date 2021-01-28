@@ -23,6 +23,7 @@ pip install -r requirements.txt
 To run the website run the command via cmd: python manage.py runserver and you copy the link into your browser to lunch the website.
 
 admin user:
-**
+<br/>
 email: admin@admin.com
+<br/>
 password: admin
