@@ -11,8 +11,7 @@ Features:
   - Add new entries to your vault
   - Update/Delete existing entries
   - Search for specific entries by the site name or URL
-  - Fully Scalable Design
-
+  - Fully responsive
 
 # Run The Website
 
