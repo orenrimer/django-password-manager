@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container align-items-center">
+  <div class="row mt-5 pt-5">
+    <div class="col-lg-12 text-center p-4">
+      <h1>Welcome to Vault Pass</h1>
+      <p class="lead text-muted mb-5">Manage your passwords in an easier way.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 d-flex p-4 justify-content-center align-items-center">
+      <a class="btn btn-lg btn-dark  p-3 " style="width:10rem; border-radius: 7px 0px 0px 7px;"
+       href="{% url 'accounts:login'%}">Log in
+      </a>
+      <a class="btn btn-lg p-3 " style="background-color: #D22D27;
+        color: #FFFF; width:10rem; border-radius: 0px 7px 7px 0px;" href="{% url 'accounts:register'%}">Register
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

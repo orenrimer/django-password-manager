@@ -1,0 +1,53 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<h1 class="h2 mt-3 font-weight-normal">Register</h1>
+<form method='post' class="form-signin p-5" > {% csrf_token %}
+    <input name="email" type="email" id="inputEmail" class="form-control mb-3" placeholder="Email address" required autofocus>
+    <input name="username" type="text" id="inputUsername" class="form-control mb-3 p-2" placeholder="Username" required>
+    <div class="input-group mb-3">
+        <input name="password1" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="input-group-append">
+            <a class="btn btn-secondary" onclick="showPassword()">Show</a>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <input name="password2" type="password" id="inputPasswordConfirm" class="form-control" placeholder="Confirm Password" required>
+        <div class="input-group-append">
+            <a class="btn btn-secondary" onclick="showPasswordConfirm()">Show</a>
+        </div>
+    </div>
+
+    {% for field in form%}
+        {% for error in field.errors%}
+            <p style="color:red; font-size:1rem;">{{error}}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <button class="btn btn-lg btn-dark btn-block my-3" type="submit">Submit</button>
+    <p>Already have an account? <a href="{% url 'accounts:login' %}">Click here to Login.</a></p>
+</form>
+
+
+<script type="text/javascript">
+    function showPassword() {
+      var x = document.getElementById("inputPassword");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+</script>
+
+<script type="text/javascript">
+    function showPasswordConfirm() {
+      var x = document.getElementById("inputPasswordConfirm");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+</script>
+{% endblock content %}

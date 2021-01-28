@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="h4 my-4 py-4 font-weight-normal">Update info</h1>
+<form method='post' class="form-signin p-4" enctype="multipart/form-data"> {% csrf_token %}
+    <label for="inputEmail" class="sr-only">New Email address</label>
+    <input name="email" value="{{form.initial.email}}" type="email" id="inputEmail" class="form-control mb-3" required autofocus>
+    <label for="inputUsername" class="sr-only">New Username</label>
+    <input name="username" value="{{form.initial.username}}" type="text" id="inputUsername" class="form-control mb-3" required>
+
+    {% for field in form%}
+        {% for error in field.errors%}
+            <p style="color:red;">{{error}}</p>
+        {% endfor %}
+    {% endfor %}
+
+    {% if msg %}
+        <div style="color:green;">
+            <p>{{msg}}</p>
+        </div>
+    {% endif %}
+
+    {% if form.non_field_errors %}
+        <div style="color:red;">
+            <p>{{form.non_field_errors}}</p>
+        </div>
+    {% endif %}
+
+    <button class="btn btn-lg btn-dark btn-block mt-2 mb-3" type="submit">Save</button>
+    <div class="" id="account-change-password">
+        <p><a href="{% url 'password_change' %}">Change password</a></p>
+    </div>
+</form>
+{% endblock content %}
+
+

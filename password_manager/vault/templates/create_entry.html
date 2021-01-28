@@ -1,0 +1,48 @@
+<form method='post' class="form-signin p-4"> {% csrf_token %}
+    <input name="username" type="text" id="inputUsername" class="form-control mb-3" placeholder="Username" required>
+    <input name="email"  type="email" id="inputEmail" class="form-control mb-3"  placeholder="Email" required>
+    <div class="input-group mb-3">
+      <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="input-group-append">
+        <a class="btn showPassword" onclick="showPassword()">Show</a>
+      </div>
+    </div>
+    <input name="site_name" type="text" id="inputSiteName" class="form-control mb-3" placeholder="Site name" required>
+    <input name="site_url" type="text" id="inputUrl" class="form-control mb-3" placeholder="Site Url" required>
+    <textarea class="form-control" name="notes" id="FormControlTextarea" rows="3" placeholder="Notes (optional)"></textarea>
+
+    {% for field in form%}
+        {% for error in field.errors%}
+            <p style="color:red; font-size:1rem;">{{error}}</p>
+        {% endfor %}
+    {% endfor %}
+
+    {% if form.non_field_errors %}
+        <div style="color:red; font-size:1rem;">
+            <p>{{form.non_field_errors}}</p>
+        </div>
+    {% endif %}
+    <div class="d-flex justify-content-end mt-5">
+        <a type="button" class="btn btn-secondary" href="{% url 'home'%}">Cancel</a>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>
+
+
+<style>
+    .showPassword{
+        border: 1px solid #D22D27;
+        color: #D22D27;
+    }
+</style>
+
+<script type="text/javascript">
+    function showPassword() {
+      var x = document.getElementById("inputPassword");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+</script>

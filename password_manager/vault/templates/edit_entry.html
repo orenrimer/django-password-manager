@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="h3 mt-5 font-weight-normal">Details</h1>
+<form method='post' class="form-signin p-4" enctype="multipart/form-data"> {% csrf_token %}
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input name="username" value="{{form.initial.username}}" type="text" id="inputUsername" class="form-control mb-3" required>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input name="email" value="{{form.initial.email}}" type="email" id="inputEmail" class="form-control mb-3" required>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <div class="input-group mb-3">
+      <input name="password" value="{{form.initial.password}}" type="password" id="inputPassword" class="form-control" required>
+      <div class="input-group-append">
+        <a class="btn btn-secondary" onclick="showPassword()">Show</a>
+      </div>
+    </div>
+    <label for="inputSiteName" class="sr-only">Site Name</label>
+    <input name="site_name" value="{{form.initial.site_name}}" type="text" id="inputSiteName" class="form-control mb-3" required>
+    <label for="inputUrl" class="sr-only">Site URL</label>
+    <input name="site_url" value="{{form.initial.site_url}}" type="text" id="inputUrl" class="form-control mb-3" required>
+    {% if form.initial.notes %}
+        <textarea class="form-control" name="notes" id="FormControlTextarea" rows="3">{{form.initial.notes}}</textarea>
+    {% else %}
+        <textarea class="form-control" name="notes" id="FormControlTextarea" rows="3">Notes (optional)</textarea>
+    {% endif %}
+
+    {% for field in form%}
+        {% for error in field.errors%}
+            <p style="color:red;">{{error}}</p>
+        {% endfor %}
+    {% endfor %}
+
+    {% if msg %}
+        <div style="color:green;">
+            <p>{{msg}}</p>
+        </div>
+    {% endif %}
+
+    {% if form.non_field_errors %}
+        <div style="color:red;">
+            <p>{{form.non_field_errors}}</p>
+        </div>
+    {% endif %}
+    <button class="btn btn-lg btn-dark btn-block p-2 mt-3 mb-2 mx-1" type="submit">Save Changes</button>
+</form>
+
+
+
+<script type="text/javascript">
+    function showPassword() {
+      var x = document.getElementById("inputPassword");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+</script>
+
+
+<style type="text/css">
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 6%;
+        width: 20px;
+        height: 20px;
+        border: none;
+        background-color: transparent;
+    }
+</style>
+{% endblock content %}
+
+
