@@ -1,7 +1,7 @@
 # django-password-manager
 
 
-"Vault Pass" is a simple password manager application built using Python, Django, Bootstrap, HTML, CSS, and JavaScript.
+"Vault Pass" is a simple password manager application built using Python, Django, SQLite, Bootstrap, HTML, CSS, and JavaScript.
 
 
 Features:
