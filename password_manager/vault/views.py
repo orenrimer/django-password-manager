@@ -22,7 +22,15 @@ def get_entry_queryset(request, query=None):
     return list(set(queryset))
 
 
+
 def delete_entry_view(request, entry_id):
+    user = request.user
+    if not user.is_authenticated:
+        return redirect('must_authenticate')
+    
+    if obj.user != user:
+        return redirect("home")
+    
     obj = get_object_or_404(Entry, id=entry_id)
     obj.delete()
     return redirect("home")
@@ -39,6 +47,7 @@ def create_entry_view(request):
         account = Account.objects.filter(email=request.user.email).first()
         obj.user = account
         obj.save()
+        
     return form
 
 
