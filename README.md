@@ -9,7 +9,6 @@ Features:
   - Register, update, authenticate, delete users
   - Entry posting (Create, Retrieve, Update, Delete - CRUD)
   - Building a custom user Model and administrator panel
-  - Search for specific entries by the site name or URL
   - Bootstrap
   - HTML
   - CSS
