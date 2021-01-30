@@ -22,7 +22,6 @@ def get_entry_queryset(request, query=None):
     return list(set(queryset))
 
 
-
 def delete_entry_view(request, entry_id):
     user = request.user
     if not user.is_authenticated:
