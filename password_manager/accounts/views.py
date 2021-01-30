@@ -71,6 +71,5 @@ def must_authenticate_view(request):
     return render(request, 'must_authenticate.html', {})
 
 
-
 def unauthorized_view(request):
     return render(request, 'unauthorized_view.html', {})
