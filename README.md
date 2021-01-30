@@ -6,7 +6,7 @@
 
 Features:
 
-  - Register, update, authentications and authorization
+  - Register/update an account, login authentications and authorization
   - Entry posting (Create, Retrieve, Update, Delete - CRUD)
   - Building a custom user Model and administrator panel
   - Bootstrap
