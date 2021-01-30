@@ -55,7 +55,7 @@ def update_entry_view(request, entry_id):
     context = {}
     user = request.user
     if not user.is_authenticated:
-        return redirect("accounts:login")
+        return redirect('must_authenticate')
 
 
     obj = get_object_or_404(Entry, id=entry_id)
