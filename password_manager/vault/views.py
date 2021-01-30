@@ -29,7 +29,7 @@ def delete_entry_view(request, entry_id):
         return redirect('must_authenticate')
     
     if obj.user != user:
-        return redirect("home")
+        return redirect("unauthorized")
     
     obj = get_object_or_404(Entry, id=entry_id)
     obj.delete()
@@ -60,7 +60,7 @@ def update_entry_view(request, entry_id):
 
     obj = get_object_or_404(Entry, id=entry_id)
     if obj.user != user:
-        return redirect("home")
+        return redirect("unauthorized")
 
     form = EntryUpdateForm(request.POST or None, instance=obj)
     if form.is_valid():
