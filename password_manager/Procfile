@@ -1,1 +1,1 @@
-web: gunicorn local.wsgi --log-file -
+web: gunicorn password_manager.wsgi --log-file -
